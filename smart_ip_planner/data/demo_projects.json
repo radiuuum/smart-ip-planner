@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Шағын кеңсе",
+    "base": "192.168.1.0/24",
+    "method": "VLSM",
+    "gateway_policy": "first",
+    "default_reserve": 20,
+    "departments": [
+      {"name": "IT", "vlan_id": 10, "hosts": 40, "reserve_pct": 20},
+      {"name": "Әкімшілік", "vlan_id": 20, "hosts": 20, "reserve_pct": 20},
+      {"name": "Бухгалтерия", "vlan_id": 30, "hosts": 10, "reserve_pct": 20},
+      {"name": "Серверлік", "vlan_id": 40, "hosts": 5, "reserve_pct": 20},
+      {"name": "Қауіпсіздік", "vlan_id": 50, "hosts": 8, "reserve_pct": 20}
+    ],
+    "reserved": []
+  },
+  {
+    "name": "Университет",
+    "base": "10.10.0.0/16",
+    "method": "VLSM",
+    "gateway_policy": "first",
+    "default_reserve": 30,
+    "departments": [
+      {"name": "Студенттер Wi-Fi", "vlan_id": 100, "hosts": 1500, "reserve_pct": 30},
+      {"name": "Жатақхана", "vlan_id": 110, "hosts": 400, "reserve_pct": 30},
+      {"name": "Компьютер сыныптары", "vlan_id": 120, "hosts": 300, "reserve_pct": 30},
+      {"name": "Оқытушылар", "vlan_id": 130, "hosts": 200, "reserve_pct": 30},
+      {"name": "Бейнебақылау", "vlan_id": 140, "hosts": 120, "reserve_pct": 30},
+      {"name": "Әкімшілік", "vlan_id": 150, "hosts": 80, "reserve_pct": 30},
+      {"name": "Кітапхана", "vlan_id": 160, "hosts": 60, "reserve_pct": 30},
+      {"name": "Серверлік", "vlan_id": 170, "hosts": 40, "reserve_pct": 30}
+    ],
+    "reserved": [
+      {"network": "10.10.0.0/24", "note": "Басқару желісі (резерв)"},
+      {"network": "10.10.255.0/24", "note": "DMZ және сыртқы шлюздер"}
+    ]
+  },
+  {
+    "name": "Мәселелі желі",
+    "base": "172.16.0.0/24",
+    "method": "VLSM",
+    "gateway_policy": "first",
+    "default_reserve": 0,
+    "departments": [
+      {"name": "Оқу корпусы", "vlan_id": 10, "hosts": 100, "reserve_pct": 0},
+      {"name": "Әкімшілік", "vlan_id": 20, "hosts": 50, "reserve_pct": 0},
+      {"name": "Бухгалтерия", "vlan_id": 20, "hosts": 50, "reserve_pct": 0},
+      {"name": "Кітапхана", "vlan_id": 40, "hosts": 25, "reserve_pct": 0},
+      {"name": "Серверлік", "vlan_id": 50, "hosts": 25, "reserve_pct": 0},
+      {"name": "Қонақ Wi-Fi", "vlan_id": 60, "hosts": 10, "reserve_pct": 0}
+    ],
+    "reserved": [
+      {"network": "172.16.0.240/28", "note": "Қызметтік резерв"}
+    ]
+  }
+]
